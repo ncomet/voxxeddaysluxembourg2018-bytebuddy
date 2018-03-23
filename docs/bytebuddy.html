@@ -5,7 +5,7 @@
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
 <meta content="Asciidoctor 1.5.0" name="generator" />
 <meta content="Nicolas Comet" name="author" />
-<title>Byte Buddy : bytecode gen made easy !</title>
+<title>Byte Buddy l&#8217;autre solution : le bytecode</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet" />
 <style>
 .conum { display: inline-block; color: white !important; background-color: #222222; -webkit-border-radius: 100px; border-radius: 100px; text-align: center; width: 1.2em; height: 1.2em; font-size: 0.9em; font-weight: bold; line-height: 1.2; font-family: Arial, sans-serif; font-style: normal; position: relative; top: -0.1em; }
@@ -120,66 +120,43 @@ table.CodeRay td.code>pre{padding:0}
 <body class="article">
 <div class="deck-container">
 <section class="slide" id="title-slide">
-<h1><code>Byte Buddy</code> : bytecode gen made <em>easy</em> !</h1>
+<h1><code>Byte Buddy</code> l&#8217;autre solution : le bytecode</h1>
 <span id="author">Nicolas Comet</span>
 <br />
-<span id="email"><a href="mailto:n.comet@lectra.com">n.comet@lectra.com</a></span>
+<span id="email"><a href="mailto:nicolas.comet@gmail.com">nicolas.comet@gmail.com</a></span>
 <br />
 </section>
 <div id="preamble">
 <div class="sectionbody">
 <div class="imageblock" style="float: right">
 <div class="content">
-<img alt="javaone logo" height="100" src="images/javaone-logo.png" width="bandeau" />
+<img alt="voxxeddayslux" height="100" src="images/voxxeddayslux.jpg" width="bandeau" />
 </div>
 </div>
 </div>
 </div>
-<section class="slide" id="_about_me">
-<h2>About me</h2>
-<div class="imageblock" style="float: right">
-<div class="content">
-<img alt="avatar" src="images/avatar.jpg" />
-</div>
-</div>
-<div class="paragraph"><p><span class="icon"><i class="icon-twitter"></i></span> @NicolasComet<br />
-<span class="icon"><i class="icon-github"></i></span> <a class="bare" href="https://github.com/ncomet">https://github.com/ncomet</a></p></div>
-<div class="ulist">
-<ul>
-<li>Developer since 7 years</li>
-</ul>
-</div>
-<div class="imageblock" style="float: right">
-<div class="content">
-<img alt="logolectra130" src="images/logolectra130.png" />
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>Software R&amp;D Engineer @Lectra, worldwide leader in integrated softwares, machines and cloud services for soft material industries</li>
-</ul>
-</div>
+<section class="slide" id="_qui_je_suis">
+<h2>Qui je suis</h2>
 <div class="imageblock" style="float: right">
 <div class="content">
 <img alt="bordeauxjug" src="images/bordeauxjug.jpg" />
 </div>
 </div>
-<div class="ulist">
-<ul>
-<li>Speaker &amp; Member of Bordeaux JUG</li>
-</ul>
-</div>
-</section>
-<section class="slide" id="_lectra">
-<h2>Lectra</h2>
+<div class="paragraph"><p><span class="icon"><i class="icon-twitter"></i></span> @NicolasComet<br />
+<span class="icon"><i class="icon-github"></i></span> <a class="bare" href="https://github.com/ncomet">https://github.com/ncomet</a></p></div>
 <div class="imageblock">
 <div class="content">
-<img alt="lectra hires" src="images/lectra-hires.png" />
+<img alt="lectra" src="images/lectra.png" />
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img alt="versalis" src="images/lectra-versalis.jpg" width="800" />
 </div>
 </div>
 </section>
-<section class="slide" id="_how_it_all_began">
-<h2>How it all began</h2>
+<section class="slide" id="_la_petite_histoire">
+<h2>La petite histoire</h2>
 <div class="paragraph"><p><em>"Making Java more dynamic"</em> @Devoxx France 2015</p></div>
 <div class="paragraph"><p><span class="icon"><i class="icon-external-link"></i></span> <a class="bare" href="https://youtu.be/vjv4idwQL7k">https://youtu.be/vjv4idwQL7k</a></p></div>
 <div class="imageblock">
@@ -202,8 +179,8 @@ table.CodeRay td.code>pre{padding:0}
 <h2>Cross Cutting Concerns</h2>
 <div class="ulist">
 <ul>
-<li>Non business/domain related</li>
-<li>Orthogonal preoccupations</li>
+<li>Non métier/liées au domaine</li>
+<li>Préoccupations transverses</li>
 </ul>
 </div>
 <div class="imageblock slide">
@@ -212,53 +189,53 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 </section>
-<section class="slide" id="_examples">
-<h2>Examples</h2>
+<section class="slide" id="_exemples">
+<h2>Exemples</h2>
 <div class="ulist">
 <ul>
 <li>Logging <span class="icon"><i class="icon-list"></i></span></li>
-<li>Caching <span class="icon"><i class="icon-dashboard"></i></span></li>
+<li>Caches <span class="icon"><i class="icon-dashboard"></i></span></li>
 <li>Monitoring <span class="icon"><i class="icon-bar-chart"></i></span></li>
-<li>Data validation <span class="icon"><i class="icon-check"></i></span></li>
-<li>Real time constraints <span class="icon"><i class="icon-gears"></i></span></li>
-<li>Persistence <span class="icon"><i class="icon-save"></i></span></li>
+<li>Validation données <span class="icon"><i class="icon-check"></i></span></li>
+<li>Contraintes temps réel <span class="icon"><i class="icon-gears"></i></span></li>
+<li>Persistance <span class="icon"><i class="icon-save"></i></span></li>
 <li>Transactions <span class="icon"><i class="icon-flag-checkered"></i></span></li>
 <li>&#8230;&#8203;</li>
 </ul>
 </div>
 </section>
-<section class="slide" id="_adding_behavior">
-<h2>Adding behavior</h2>
+<section class="slide" id="_ajouter_du_comportement">
+<h2>Ajouter du comportement</h2>
 <div class="ulist">
 <ul>
 <li>Transparent</li>
-<li>Non intrusive</li>
-<li>Strongly typed</li>
-<li>Regardless of type</li>
-<li>Lightweight</li>
+<li>Non intrusif</li>
+<li>Fortement typé</li>
+<li>Indépendamment des types</li>
+<li>Léger</li>
 </ul>
 </div>
 </section>
-<section class="slide" id="__some_solutions">
-<h2>(Some) solutions</h2>
+<section class="slide" id="__quelques_solutions">
+<h2>(Quelques) solutions</h2>
 <div class="ulist">
 <ul>
-<li>Reflection</li>
-<li>Aspect Oriented Programming (AOP)</li>
-<li>Bytecode generation</li>
+<li>Réflexion</li>
+<li>Programmation Orientée Aspects (AOP)</li>
+<li>Génération de bytecode</li>
 </ul>
 </div>
 </section>
-<section class="slide" id="_reflection">
-<h2>Reflection</h2>
+<section class="slide" id="_réflexion">
+<h2>Réflexion</h2>
 <div class="paragraph"><p><code>java.lang.reflect</code></p></div>
-<div class="paragraph"><p>Reading Type metamodel at runtime</p></div>
-<div class="paragraph"><p>Calling constructors, methods, access attributes (sometimes unsafely)</p></div>
-<div class="paragraph slide"><p>Mostly about <em>Introspection</em></p></div>
-<div class="paragraph slide"><p>It has a cost (JIT is useless)</p></div>
+<div class="paragraph"><p>Lire le métamodèle des types à l&#8217;exécution</p></div>
+<div class="paragraph"><p>Appeler constructeurs, méthodes, accéder aux attributs (parfois de manière non sécurisée)</p></div>
+<div class="paragraph slide"><p>Surtout de l'<em>Introspection</em></p></div>
+<div class="paragraph slide"><p>Ça a un coût (JIT inutile)</p></div>
 </section>
-<section class="slide" id="_aop_concepts">
-<h2>AOP concepts</h2>
+<section class="slide" id="_concepts_de_l_aop">
+<h2>Concepts de l&#8217;AOP</h2>
 <div class="imageblock">
 <div class="content">
 <img alt="concerns" src="images/concerns.png" />
@@ -275,10 +252,10 @@ table.CodeRay td.code>pre{padding:0}
 <h2>AOP</h2>
 <div class="ulist">
 <ul>
-<li><strong>Aspect</strong> Description of a cross cutting concern</li>
-<li><strong>Join point</strong> A point during the execution of code (method execution, attribute access)</li>
-<li><strong>Advice</strong> Action taken by an aspect at a particular join point</li>
-<li><strong>Pointcut</strong> A regular expression that matches join points.</li>
+<li><strong>Aspect</strong> Description d&#8217;un cross cutting concern</li>
+<li><strong>Join point</strong> Un point dans le temps d&#8217;exécution (exécution d&#8217;une méthode, accès à un attribut&#8230;&#8203;)</li>
+<li><strong>Advice</strong> Action prise par un Aspect à un Joint Point donné</li>
+<li><strong>Pointcut</strong> Une expression régulière qui matche un Join Point.</li>
 </ul>
 </div>
 <div class="imageblock slide">
@@ -287,16 +264,16 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 </section>
-<section class="slide" id="_java_bytecode">
-<h2>Java Bytecode</h2>
+<section class="slide" id="_bytecode_java">
+<h2>Bytecode Java</h2>
 <div class="imageblock">
 <div class="content">
 <img alt="bytecode" src="images/bytecode.png" />
 </div>
 </div>
 </section>
-<section class="slide" id="_bytecode_generation">
-<h2>Bytecode generation</h2>
+<section class="slide" id="_génération_de_bytecode">
+<h2>Génération de bytecode</h2>
 <div class="imageblock">
 <div class="content">
 <img alt="diagramme" height="493" src="images/diag.png" width="875" />
@@ -311,8 +288,8 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 </section>
-<section class="slide" id="_the_famous_case">
-<h2>The famous case</h2>
+<section class="slide" id="_le_cas_d_école">
+<h2>Le cas d&#8217;école</h2>
 <div class="ulist">
 <ul>
 <li>n ∈ ℕ</li>
@@ -324,11 +301,11 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 </section>
-<section class="slide" id="_the_famous_case_2">
-<h2>The famous case</h2>
+<section class="slide" id="_le_cas_d_école_2">
+<h2>Le cas d&#8217;école</h2>
 <div class="ulist">
 <ul>
-<li>Call tree</li>
+<li>Arbre d&#8217;invocations</li>
 </ul>
 </div>
 <div class="imageblock">
@@ -337,11 +314,11 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 </section>
-<section class="slide" id="_caching">
-<h2>Caching</h2>
+<section class="slide" id="_mise_en_cache">
+<h2>Mise en cache</h2>
 <div class="ulist">
 <ul>
-<li>Memoization</li>
+<li>Mémoïsation</li>
 </ul>
 </div>
 <div class="imageblock">
@@ -350,17 +327,17 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 </section>
-<section class="slide" id="_some_code">
-<h2>Some code !</h2>
+<section class="slide" id="_du_code">
+<h2>Du code !</h2>
 <div class="imageblock">
 <div class="content">
 <img alt="demo" src="images/demo.png" />
 </div>
 </div>
 </section>
-<section class="slide" id="_perf_comparison">
-<h2>Perf comparison</h2>
-<div class="paragraph"><p>Calling <code>fibonacci(42)</code> (average results)</p></div>
+<section class="slide" id="_comparaison_de_performance">
+<h2>Comparaison de performance</h2>
+<div class="paragraph"><p>Appel de <code>fibonacci(42)</code> (temps moyens)</p></div>
 <table class="tableblock frame-all grid-all" style="width:60%">
 <colgroup>
 <col style="width:50%" />
@@ -369,90 +346,90 @@ table.CodeRay td.code>pre{padding:0}
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Version</th>
-<th class="tableblock halign-left valign-top">Time</th>
+<th class="tableblock halign-left valign-top">Temps</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Raw Fibonacci</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fibonacci brut</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>1123.658</code> ms</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AspectJ (compile time)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AspectJ (tissage à la compilation)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0.013</code> ms</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Byte Buddy (runtime)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Byte Buddy (exécution)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0.689</code> ms</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Spring AOP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>2123</code> ms (first time, then instant)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>2123</code> ms (première fois, puis immédiat)</p></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section class="slide" id="_under_the_hood">
-<h2>Under the hood</h2>
+<section class="slide" id="_sous_le_capot">
+<h2>Sous le capot</h2>
 <div class="ulist">
 <ul>
 <li><p>
 AspectJ<div class="ulist">
 <ul>
-<li>compile time weaving (<code>ajc</code>)</li>
-<li>post-compile weaving (on classes and jars)</li>
-<li>load time weaving (agent)</li>
-<li>intercept everything</li>
+<li>tissage à la compilation (<code>ajc</code>)</li>
+<li>tissage post-compilation (sur les classes et jars)</li>
+<li>tissage au chargement (agent)</li>
+<li>tout intercepter</li>
 </ul>
 </div></p></li>
 <li><p>
 Spring AOP<div class="ulist">
 <ul>
 <li><p>
-proxy-based<div class="ulist">
+proxies<div class="ulist">
 <ul>
-<li>Interface &#8594; Java dynamic proxy</li>
-<li>else CGLIB bytecode generated proxy</li>
+<li>Interface &#8594; Proxy dynamique Java</li>
+<li>sinon CGLIB (proxy généré par le bytecode)</li>
 </ul>
 </div></p></li>
-<li>good AspectJ integration if you need more</li>
+<li>bonne intégration avec AspectJ si besoin</li>
 </ul>
 </div></p></li>
 </ul>
 </div>
 </section>
-<section class="slide" id="_pros_cons">
-<h2>Pros &amp; Cons</h2>
+<section class="slide" id="_avantages_inconvénients">
+<h2>Avantages &amp; Inconvénients</h2>
 <div class="ulist">
 <ul>
 <li><p>
 AspectJ<div class="ulist">
 <ul>
-<li><span class="icon"><i class="icon-minus-sign"></i></span> Setup</li>
-<li><span class="icon"><i class="icon-minus-sign"></i></span> DSL to learn</li>
+<li><span class="icon"><i class="icon-minus-sign"></i></span> Mise en place</li>
+<li><span class="icon"><i class="icon-minus-sign"></i></span> DSL à apprendre</li>
 <li><span class="icon"><i class="icon-plus-sign"></i></span> Performance</li>
-<li><span class="icon"><i class="icon-plus-sign"></i></span> Non intrusive</li>
-<li><span class="icon"><i class="icon-plus-sign"></i></span> Span</li>
+<li><span class="icon"><i class="icon-plus-sign"></i></span> Non intrusif</li>
+<li><span class="icon"><i class="icon-plus-sign"></i></span> Périmètre</li>
 </ul>
 </div></p></li>
 <li><p>
 Spring AOP<div class="ulist">
 <ul>
-<li><span class="icon"><i class="icon-minus-sign"></i></span> Not really AOP</li>
-<li><span class="icon"><i class="icon-minus-sign"></i></span> Component&#8217;s public methods only</li>
+<li><span class="icon"><i class="icon-minus-sign"></i></span> Pas vraiment de l&#8217;AOP</li>
+<li><span class="icon"><i class="icon-minus-sign"></i></span> Méthodes publiques des composants seulement</li>
 <li><span class="icon"><i class="icon-minus-sign"></i></span> / <span class="icon"><i class="icon-plus-sign"></i></span> Framework</li>
-<li><span class="icon"><i class="icon-plus-sign"></i></span> Spring integration</li>
-<li><span class="icon"><i class="icon-plus-sign"></i></span> Migration to AspectJ</li>
+<li><span class="icon"><i class="icon-plus-sign"></i></span> Écosystème Spring</li>
+<li><span class="icon"><i class="icon-plus-sign"></i></span> Migration vers AspectJ</li>
 </ul>
 </div></p></li>
 <li><p>
 Byte Buddy<div class="ulist">
 <ul>
-<li><span class="icon"><i class="icon-minus-sign"></i></span> / <span class="icon"><i class="icon-plus-sign"></i></span> No compile time</li>
-<li><span class="icon"><i class="icon-plus-sign"></i></span> Library</li>
-<li><span class="icon"><i class="icon-plus-sign"></i></span> Java DSL API</li>
+<li><span class="icon"><i class="icon-minus-sign"></i></span> / <span class="icon"><i class="icon-plus-sign"></i></span> Pas de compile-time</li>
+<li><span class="icon"><i class="icon-plus-sign"></i></span> Librairie</li>
+<li><span class="icon"><i class="icon-plus-sign"></i></span> DSL Java</li>
 <li><span class="icon"><i class="icon-plus-sign"></i></span> Performance</li>
-<li><span class="icon"><i class="icon-plus-sign"></i></span> Agent writing help</li>
+<li><span class="icon"><i class="icon-plus-sign"></i></span> Assistance écriture d&#8217;agents</li>
 </ul>
 </div></p></li>
 </ul>
@@ -460,7 +437,7 @@ Byte Buddy<div class="ulist">
 </section>
 <section class="slide" id="_byte_buddy">
 <h2>Byte Buddy</h2>
-<div class="paragraph"><p>Open Source (license Apache), used by <code>Mockito</code>, <code>Hibernate</code>, <code>Google Bazle</code>, <a href="https://github.com/raphw/byte-buddy/wiki/Projects-using-Byte-Buddy">and others</a></p></div>
+<div class="paragraph"><p>Open Source (license Apache), utilisé par <code>Mockito</code>, <code>Hibernate</code>, <code>Google Bazle</code>, <a href="https://github.com/raphw/byte-buddy/wiki/Projects-using-Byte-Buddy">et bien d&#8217;autres</a></p></div>
 <div class="imageblock">
 <div class="content">
 <img alt="Stars" src="images/stars-github.png" />
@@ -470,9 +447,9 @@ Byte Buddy<div class="ulist">
 <div class="paragraph"><p><span class="icon"><i class="icon-external-link"></i></span> <a class="bare" href="http://bytebuddy.net">http://bytebuddy.net</a></p></div>
 <div class="ulist">
 <ul>
-<li>Light</li>
-<li>Easy to use (compared to CGLIB, BCEL, ASM)</li>
-<li>Become a library writer</li>
+<li>Léger</li>
+<li>Facile à utiliser (comparé à CGLIB, BCEL, ASM)</li>
+<li>Écrire ses propres libs</li>
 </ul>
 </div>
 </section>
@@ -501,16 +478,16 @@ Byte Buddy<div class="ulist">
 <div class="ulist">
 <ul>
 <li><p>
-Adding behavior<div class="ulist">
+Ajouter du comportement<div class="ulist">
 <ul>
-<li>AOP &#8594; Implementing multiple cross cutting concerns</li>
-<li>Byte Buddy &#8594; Writing libraries/frameworks or agents</li>
+<li>AOP &#8594; Implémenter des cross cutting concerns multiples</li>
+<li>Byte Buddy &#8594; Écriture librairies/frameworks ou agents</li>
 </ul>
 </div></p></li>
 <li><p>
-Discovering at runtime<div class="ulist">
+Découverte à l&#8217;exécution<div class="ulist">
 <ul>
-<li>Reflection &#8594; Custom serialization, <em>nasty</em> things (setting private fields&#8230;&#8203;)</li>
+<li>Réflexion &#8594; sérialisation personnalisée, choses <em>peu élégantes</em>  (setter champs privés&#8230;&#8203;)</li>
 </ul>
 </div></p></li>
 </ul>
