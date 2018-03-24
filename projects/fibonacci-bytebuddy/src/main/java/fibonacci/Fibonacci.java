@@ -16,7 +16,7 @@ public class Fibonacci {
     @Override
     public String toString() {
         return "Fibonacci{" +
-                "invocations=" + NumberFormat.getNumberInstance(Locale.US).format(invocations) +
+                "invocations=" + NumberFormat.getNumberInstance(Locale.FRENCH).format(invocations) +
                 '}';
     }
 }
