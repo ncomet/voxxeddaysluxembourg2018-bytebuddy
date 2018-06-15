@@ -32,7 +32,7 @@ public class FibonacciResource {
 
         long duration = stopWatch.getLastTaskTimeMillis();
         return ResponseEntity.ok(MessageFormat.format(
-                "fibonacci({0}) = {1}<br/> It took <font color=\"red\">{2}</font>ms <br/><br/>",
+                "fibonacci({0}) = {1}<br/> temps de calcul <font color=\"red\">{2}</font>ms <br/><br/>",
                 n,
                 result,
                 duration)
@@ -44,6 +44,6 @@ public class FibonacciResource {
 
 
     private String commentary(long duration) {
-        return duration > 1L ? "A bit <i>long</i> don't you think?" : "Woaw that was <i>fast</i> !";
+        return duration > 1L ? "Un peu <i>long</i> non?" : "Wow, c'était <i>rapide</i> !";
     }
 }
